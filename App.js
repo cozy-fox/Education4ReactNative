@@ -1,6 +1,7 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, View } from "react-native";
 import { useState } from 'react';
+import { GestureHandlerRootView } from "react-native-gesture-handler";
 
 import Button from './components/Button';
 import ImageViewer from './components/ImageViewer';
@@ -51,6 +52,7 @@ export default function App() {
   };
 
   return (
+    <GestureHandlerRootView style={styles.container}>
     <View style={styles.container}>
       <View style={styles.imageContainer}>
         <ImageViewer
@@ -78,6 +80,8 @@ export default function App() {
       </EmojiPicker>
       <StatusBar style="auto" />
     </View>
+    </GestureHandlerRootView>
+    
   );
 }
 const styles = StyleSheet.create({
